@@ -1,0 +1,585 @@
+@import 'setup';
+
+// DESIGN ELEMENTS
+
+//FONTSTYLES
+$headFont: 'Rock Salt', cursive;
+$titleFont: 'Hind', sans-serif;
+$bodyFont: 'Open Sans', sans-serif;
+
+
+// COLORS
+
+$mainblue: rgb(23, 137, 169);
+$darkblue: rgb(2, 81, 103);
+$textcolor: rgb(137, 192, 207);
+$orange: rgb(255, 142, 27);
+
+//COMMON STYLES
+
+@mixin fontSize($scale) {
+		font-size: $scale * 1px;
+		font-size: ($scale / 10) * 1rem;
+}
+
+body{
+	font-family: $bodyFont;
+	color: $mainblue;
+	font-weight: 400;
+	@include fontSize(12);
+
+}
+
+html {
+	font-size: 62.5%;
+}
+
+h1, h2, h3, h4, h5, p {
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	@include fontSize(60);
+	font-family: $headFont;
+	margin: 0 auto;
+	margin-top: 5rem;
+	padding: 1rem 0;
+	padding-bottom: 1rem;
+	color: $orange;
+	position: relative;
+	z-index:4;
+	// background: rgba(255,255,255,0.5);
+}
+
+h2 {
+	@include fontSize(50);
+	font-family: $titleFont;
+	margin: 0 auto;
+	padding: 5rem;
+	color: white;
+	z-index: 9
+}
+
+h3 {
+	font-size: 1.4rem;
+	font-family: $bodyFont;
+	margin: 0 auto;
+	padding: 3rem;
+}
+
+h5{
+	font-size: 2rem;
+	font-family: $headFont;
+	color: $darkblue;
+	letter-spacing: 5px;
+	text-transform: uppercase;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+h4 {
+	font-size: 3rem;
+}
+
+.wrapper {
+	width: 90%;
+	margin: 0 auto;
+}
+
+
+
+// THIS IS THE START OF THE HEADER --------------------------
+
+header {
+	background: url(assets/images/HeroImageCouple-min.jpg) no-repeat center;
+	max-width: 100%;
+	background-size: cover;
+	padding-bottom: 50px;
+	padding-top: 50px;
+	position: relative;
+
+}
+
+.opacityHead{
+	position: absolute;
+	background: rgba(255,255,255,0.3);
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+nav{
+	margin-top: 1px;
+	position: relative;
+	z-index: 1;
+}
+
+i {
+	color: $darkblue;
+}
+
+button.start{
+	margin: 0 auto;
+	width: 20%;
+	padding: 10px;
+	background: $orange;
+	border-radius: 9px;
+	border-style: none;
+	@include fontSize(30);
+	font-family: $titleFont;
+	color: white;
+	text-transform: uppercase;
+	position: relative;
+	z-index: 2;
+}
+
+button.start:hover {
+	background: $mainblue;
+	transition: 0.7s;
+}
+
+div.greybox {
+	background: rgba(1,1,1,0.3);
+	width: 70%;
+	margin: 2rem auto;
+	h2 {
+		padding: 2rem;
+	}
+}
+
+// THE TOP SECTION STARTS HERE
+
+.sectionTop{
+	background: $mainblue;
+	color: white;
+	margin: 0 auto;
+	text-align: center;
+}
+div.sectionTopWrapper svg {
+	width: 30%;
+	height: 30%;
+	fill: white;
+	margin-top: 30px;
+	margin-bottom: 0px;
+}
+
+div.welcome {
+	margin: 0 auto;
+	text-align: center;
+}
+
+.logo{
+	display: flex;
+	flex-wrap:wrap;
+}
+
+nav{
+	position: relative;
+}
+
+.email{
+	position: absolute;
+	top: 0;
+	right: 30px;
+}
+
+.email p{
+	color: white;
+
+}
+
+.slideInLeft {
+	animation-duration: 60s;
+}
+
+.pulse {
+  	animation-iteration-count: infinite;
+}
+
+.sectionTop{
+	margin: 0 auto;
+	text-align: center;
+}
+
+.sectionTopWrapper{
+	margin: 0 auto;
+	width: 70%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	& > * {
+		width: 33.33%;
+	}
+}
+
+// THIS STARTS THE MAIN SECTION
+
+div.question1, div.question2, div.question3, div.question4 {
+	margin: 0 auto;
+	text-align: center;
+	width: 90%;
+	h3 {
+		margin: 5rem;
+	}
+}
+
+form {
+	font-weight: 400;
+	// background: rgba(23, 137, 169, 0.5);
+	border-radius: 3px;
+	margin: 0 auto;
+	color: $darkblue;
+	padding: 5% 8%;
+	display:flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.question {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	text-align: center;
+}
+
+input[type=radio] {
+    visibility: hidden; 
+}
+
+.question2 input[type=radio] + label {
+	display: inline-block;
+	margin-bottom: 4%;
+	margin-left: 100px;
+	margin-right: 100px;
+	padding: 10px;
+  	background: $orange;
+  	border-radius: 9px;
+	color: white;
+	width: 20%;
+	height: 9rem;
+	font-size: 1.8rem;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	text-transform: uppercase;
+}
+
+.question3 input[type=radio] + label {
+	display: inline-block;
+	margin-bottom: 4%;
+	padding: 5px;
+  	background: $orange;
+  	border-radius: 9px;
+	color: white;
+	width: 30%;
+	height: 9rem;
+	font-size: 1.8rem;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	text-transform: uppercase;
+}
+
+.question1 i{
+	color: white;
+}
+
+.question2 i{
+	color: white;
+}
+
+.question3 label{
+	color: $darkblue;
+}
+
+.question4 i{
+	color: white;
+}
+
+input[type=radio] + label {
+	display: inline-block;
+	margin-bottom: 4%;
+	padding: 10px;
+  	background: $orange;
+  	border-radius: 9px;
+	color: white;
+	width: 20%;
+	height: 9rem;
+	font-size: 1.8rem;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	text-transform: uppercase;
+}
+
+
+input[type=radio] + label:hover {
+	background: $mainblue;
+	transition: all 0.7s;
+}
+
+input[type=radio]:checked + label {
+	background: $mainblue;
+   	color: white;
+   	border: 3px solid $orange;
+}
+
+input.submit {
+   background: $mainblue;
+   color: white;
+   padding: 20px 40px;
+   text-transform: uppercase;
+   font-weight: 700;
+   font-size: 3rem;
+   margin-top: 5rem;
+   transition: all 0.3s ease;
+   border-radius: 9px;
+   border-style: none;
+}
+
+input.submit:hover, input.submit:focus {
+	background: $darkblue;
+	color: white;
+	transition: all 0.7s;
+}
+
+.results{
+	position: relative;
+	z-index: 99999;
+}
+
+.result-box {
+	height: 100vh;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: $mainblue;
+}
+
+.close{
+	color:$darkblue;
+	font-size: 2rem;
+	font-weight: 700;
+}
+
+.titleDate{
+	color: $orange;
+	font-size: 3rem;
+}
+
+.dateplace{
+	color: $darkblue;
+}
+
+.dateDescription{
+	color: $orange;
+}
+
+.result .close {
+	text-align: left;
+	font-weight: 400;
+	text-decoration: underline;
+	font-size: 1.8rem;
+}
+
+.result .close:hover {
+	cursor: pointer;
+}
+
+.result {
+	text-align: center;
+	color: white;
+	background: white;
+	padding: 5rem;
+	width: 70%;
+}
+
+.result img{
+	height: 200px;
+	width: 300px;
+	margin-left: 50px;
+}
+
+.result h2 {
+	padding: 20px;
+}
+
+.couplesGallery h3{
+	font-size: 3rem;
+	font-family: $headFont;
+	color: $darkblue;
+}
+
+.couplesGallery i{
+	text-align: center;
+	font-size: 10rem;
+	padding-left: 45%;
+	color: $orange;
+}
+
+.couplesGallery p{
+	text-align: center;
+	font-size: 2rem;
+	color: white;
+	background: rgba(1,1,1,0.3);
+}
+
+.gallery-cell1 {
+  width: 70%;
+  height: 300px;
+  margin-right: 10px;
+  background: url(assets/images/coupleGallery1.jpg) center;
+  background-size: cover;
+  counter-increment: gallery-cell;
+}
+
+/* cell number */
+.gallery-cell1:before {
+  display: block;
+  text-align: center;
+  content: gallery-cell1;
+  line-height: 300px;
+}
+
+.gallery-cell2 {
+  width: 70%;
+  height: 300px;
+  margin-right: 10px;
+  background: url(assets/images/coupleGallery2.jpg) no-repeat center;
+  background-size: cover;
+  counter-increment: gallery-cell;
+}
+
+/* cell number */
+.gallery-cell2:before {
+  display: block;
+  text-align: center;
+  content: gallery-cell2;
+  line-height: 300px;
+}
+
+.gallery-cell3 {
+  width: 70%;
+  height: 300px;
+  margin-right: 10px;
+  background: url(assets/images/coupleGallery3.jpg) no-repeat center;
+  background-size: cover;
+  counter-increment: gallery-cell;
+}
+
+/* cell number */
+.gallery-cell3:before {
+  display: block;
+  text-align: center;
+  content: gallery-cell3;
+  line-height: 300px;
+}
+
+.gallery-cell4 {
+  width: 70%;
+  height: 300px;
+  margin-right: 10px;
+  background: url(assets/images/coupleGallery4.jpg) no-repeat center;
+  background-size: cover;
+  counter-increment: gallery-cell;
+}
+
+/* cell number */
+.gallery-cell4:before {
+  display: block;
+  text-align: center;
+  content: gallery-cell4;
+  line-height: 300px;
+}
+
+.bottomLine{
+	height: 50px;
+	background: $darkblue;
+	margin-top: 10px;
+	// margin-bottom: 20px;
+}
+
+// .whiteSpace{
+// 	height: 30px;
+// 	background: white;
+// }
+
+.bottomFooter{
+	height: 70px;
+	background: $mainblue;
+}
+
+.bottomFooter h3{
+	color: white;
+	text-align: center;
+}
+
+.bottomFooter p{
+	text-align: center;
+	color: red;
+	padding-bottom: 20px;
+	text-transform: uppercase;
+
+}
+
+.hide {
+	display: none;
+}
+
+
+
+// RESPONSIVE WORK
+
+@media all and (max-width: 940px) {	
+	h5 {
+		text-align: center;
+	}
+	div.question2 {
+		flex-direction: column;
+	}
+	.result img {
+		margin: 0;
+	}
+}
+
+@media all and (max-width: 600px) {
+	div.question3 {
+		flex-direction: column;
+	}
+	button.start {
+		width: 40%;
+	}
+}
+
+@media all and (max-width: 480px) {
+	html {
+		font-size: 50%;
+	}
+	div.sectionTopWrapper {
+		flex-direction: column;
+		& > * {
+			margin: 0 auto;
+			width: 90%;
+		}
+	}
+	h3 {
+		font-size: 2rem;
+	}
+	div.heart p {
+		font-size: 1.5rem;
+	}
+	.result {
+		width: 100%;
+	}
+}
+
